@@ -1,8 +1,30 @@
-import { useState } from 'react';
+import { useState, } from 'react';
 
 const SearchForm = ({ onSearch }) => {
   const [searchString, setSearchString] = useState('');
   const [searchOption, setSearchOption] = useState('shows');
+
+
+
+  /* UseEffect notes:
+
+    Use Effect will always run once
+    
+    console.log('rerender bro');
+
+    useEffect(() => {
+    console.log('search option changes');
+
+      return () => {
+      console.log('componenet unmounts');
+      }
+    }, [searchOption]) 
+    
+    when there is a dependency array the return will run the cleanup for each effect in the dependency array*/
+
+
+
+
   //holds the various changes to the input field
   const onSearchInputChange = ev => {
     setSearchString(ev.target.value);
