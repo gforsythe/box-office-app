@@ -1,4 +1,4 @@
-
+//just another way to destrucure.
 const  Deatils = props => {
     const {status, premiered, network} = props;
   return (

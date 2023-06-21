@@ -1,6 +1,6 @@
 // import { useEffect, useState } from "react";
 import { useQuery } from '@tanstack/react-query';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { getShowById } from '../api/tvMaze';
 import ShowMainData from '../components/shows/ShowMainData';
 import Deatils from '../components/shows/Deatils';
@@ -45,6 +45,9 @@ function Show() {
     refetchOnWindowFocus: false,
   });
 
+  
+  
+
   if (showError) {
     return <div>We have an error: {showError.message}</div>;
   }
@@ -52,6 +55,8 @@ function Show() {
   if (showData) {
     return (
       <div>
+        <Link to='/'> Go Back Home </Link>
+        
         <ShowMainData image={showData.image} name={showData.name} rating={showData.rating} summary={showData.summary} genres={showData.genres}/>
         <div>
           <h2>Details</h2>
