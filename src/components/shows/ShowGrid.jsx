@@ -1,38 +1,12 @@
-import { useReducer, useEffect } from "react"
+import { useStarredShows } from "../../lib/useStarredShows";
 import ShowCard from "./ShowCard"
-
-
-const usePersistedReducer = (reducer, initalState, localStorageKey) => {
-  const [state, dispatch] = useReducer(reducer, initalState,(inital) => {
-    const persistedValue = localStorage.getItem(localStorageKey)
-
-    return persistedValue ? JSON.parse(persistedValue) : inital
-  });
- useEffect(() => {
-  localStorage.setItem(localStorageKey, JSON.stringify(state))
-
- }, [state,localStorageKey])
-
- return [state, dispatch]
-}
-
-
-const starredShowsReducer = (currentStarred, action) => {
-switch (action.type) {
-  case 'STAR': return currentStarred.concat(action.showId)
-  case 'UNSTAR': return currentStarred.filter(showId => showId !== action.showId)
-  default:
-    return currentStarred
-  
-  }
-
-};
 
 
 
 const  ShowGrid = ({shows}) => {
 
-  const [starredShows, dispatchStarred] = usePersistedReducer(starredShowsReducer, [],'starredShows');
+ const [starredShows, dispatchStarred] =  useStarredShows();
+  
 
   const onStarMeClick = (showId) => {
       const isStarred = starredShows.includes(showId);
@@ -46,7 +20,9 @@ const  ShowGrid = ({shows}) => {
 
   return (
     <div>{shows.map(data => (
-        <ShowCard key={data.show.id} name={data.show.name} image={data.show.image ? data.show.image.medium : '/image-not-found.png'} id={data.show.id} summary={data.show.summary} onStarMeClick={onStarMeClick} />
+        <ShowCard key={data.show.id} name={data.show.name} image={data.show.image ? data.show.image.medium : '/image-not-found.png'} id={data.show.id} summary={data.show.summary} onStarMeClick={onStarMeClick} 
+        isStarred={starredShows.includes(data.show.id)}
+        />
     ))}
     </div>
   )
