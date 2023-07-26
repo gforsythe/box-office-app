@@ -13,6 +13,7 @@ import ActorsGrid from '../components/actors/ActorsGrid';
 
 
 function Home() {
+  const [filter, setFilter] = useState(null);
   //inside the reducer function - current state and the action
   /*
   const reducerfn = (currentCounter, action) => {
@@ -31,7 +32,7 @@ function Home() {
   // const [apiDataError, setApiDataError] = useState(null);
 
   //using React Query to filter out/ enable searches on the form
-  const [filter, setFilter] = useState(null);
+  
   // use Reducer takes 2 parameters - its an array therefore destructre
   /*const [counter, dispatch] = useReducer(reducerfn, 0);
 

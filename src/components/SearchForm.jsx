@@ -1,11 +1,10 @@
-import { useState, } from 'react';
+import { useState } from 'react';
 import { useSearchString } from '../lib/useSearch';
+import CustomRadio from './CustomRadio';
 
 const SearchForm = ({ onSearch }) => {
   const [searchString, setSearchString] = useSearchString();
   const [searchOption, setSearchOption] = useState('shows');
-
-
 
   /* UseEffect notes:
 
@@ -22,9 +21,6 @@ const SearchForm = ({ onSearch }) => {
     }, [searchOption]) 
     
     when there is a dependency array the return will run the cleanup for each effect in the dependency array*/
-
-
-
 
   //holds the various changes to the input field
   const onSearchInputChange = ev => {
@@ -47,27 +43,21 @@ const SearchForm = ({ onSearch }) => {
   return (
     <form onSubmit={onSubmit}>
       <input type="text" value={searchString} onChange={onSearchInputChange} />
-      <label>
-        Shows
-        <input
-          type="radio"
-          name="search-option"
-          value="shows"
-          checked={searchOption === 'shows'}
-          onChange={onRadioChange}
-        />
-      </label>
+      <CustomRadio
+        label="Shows"
+        name="search-option"
+        value="shows"
+        checked={searchOption === 'shows'}
+        onChange={onRadioChange}
+      />
 
-      <label>
-        Actors
-        <input
-          type="radio"
-          name="search-option"
-          value="actors"
-          checked={searchOption === 'actors'}
-          onChange={onRadioChange}
-        />
-      </label>
+      <CustomRadio
+        label="Actors"
+        name="search-option"
+        value="actors"
+        checked={searchOption === 'actors'}
+        onChange={onRadioChange}
+      />
 
       <button type="submit">Search</button>
     </form>
