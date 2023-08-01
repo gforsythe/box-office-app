@@ -1,9 +1,9 @@
-
+import { SearchCard } from "../common/SearchCard";
 
 const ActorCard = ({name, image, gender, country, deathday, birthday}) => {
  
   return (
-    <div>
+    <SearchCard>
         <img src={image} alt={name}/>
         <h1>{name} {!!gender && `(${gender})`}</h1>
         <p>{country ? `Comes from ${country}` : 'Country not known'}</p>
@@ -12,7 +12,7 @@ const ActorCard = ({name, image, gender, country, deathday, birthday}) => {
         
        
   
-    </div>
+    </SearchCard>
   )
 }
 

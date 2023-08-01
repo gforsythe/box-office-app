@@ -1,14 +1,23 @@
-//just another way to destrucure.
+//just another way to destrucure & create a component.
+
+import { styled } from "styled-components";
+
 const  Deatils = props => {
     const {status, premiered, network} = props;
   return (
-    <div>
+    <DetailsWrapper>
         <p>Status: {status}</p>
         <p>
             Premiered: {premiered} {!!network && `on ${network.name}`}
         </p>
-    </div>
+    </DetailsWrapper>
   )
   }
 
 export default Deatils
+
+const DetailsWrapper = styled.div`
+  p {
+    margin: 5px 0;
+  }
+`;
