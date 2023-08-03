@@ -4,15 +4,11 @@ import { searchForShows, searchForPeople } from '../api/tvMaze';
 import SearchForm from '../components/SearchForm';
 import ShowGrid from '../components/shows/ShowGrid';
 import ActorsGrid from '../components/actors/ActorsGrid';
-
-
-
-
-  
-
+import { TextCenter } from '../components/common/TextCenter';
 
 
 function Home() {
+  const [filter, setFilter] = useState(null);
   //inside the reducer function - current state and the action
   /*
   const reducerfn = (currentCounter, action) => {
@@ -31,7 +27,7 @@ function Home() {
   // const [apiDataError, setApiDataError] = useState(null);
 
   //using React Query to filter out/ enable searches on the form
-  const [filter, setFilter] = useState(null);
+  
   // use Reducer takes 2 parameters - its an array therefore destructre
   /*const [counter, dispatch] = useReducer(reducerfn, 0);
 
@@ -88,11 +84,11 @@ function Home() {
 
   const renderApiData = () => {
     if (apiDataError) {
-      return <div>Error Occured: {apiDataError.message}</div>;
+      return <TextCenter>Error Occured: {apiDataError.message}</TextCenter>;
     }
 
     if (apiData?.length === 0) {
-      return <>No results - Sorry!</>;
+      return <TextCenter>No results - Sorry!</TextCenter>;
     }
 
     if (apiData) {
