@@ -1,7 +1,7 @@
 # Box Office App
 
 
-`` A Web app to hone in my React Skills with state management, API calls, React Query, and React Router.``
+A Web app to hone in my React Skills with state management, API calls, React Query, and React Router.
 
 ## Final Product
 
