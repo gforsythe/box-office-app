@@ -21,7 +21,8 @@ A Web app to hone in my React Skills with state management, API calls, React Que
 ## Getting Started
 
 - Install all dependencies (using the `npm install` command).
-- Run Commands:
+
+Run Commands:
 
 > Run in Dev `npm run start`
 
