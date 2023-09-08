@@ -1,15 +1,14 @@
 # Box Office App
 
-Box Office
 
 `` A Web app to hone in my React Skills with state management, API calls, React Query, and React Router.``
 
 ## Final Product
 
-!["Main-Image]()
-!["Examples-Of-Rendered-Images"]()
-!["Starred"]()
-!["Single-View"]()
+!["Main-Image](https://github.com/gforsythe/box-office-app/blob/main/pics/Main%20Image.png?raw=true)
+!["Examples-Of-Rendered-Images"](https://github.com/gforsythe/box-office-app/blob/main/pics/Example%20Of%20Rendered%20Images.png?raw=true)
+!["Starred"](https://github.com/gforsythe/box-office-app/blob/main/pics/Starred.png?raw=true)
+!["Single-View"](https://github.com/gforsythe/box-office-app/blob/main/pics/Single%20View.png?raw=true)
 
 ## Dependencies
 
